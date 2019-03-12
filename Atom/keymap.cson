@@ -1,0 +1,84 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#customizing-keybindings
+# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+#
+# If you're having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on macOS and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#configuring-with-cson
+
+# 'atom-text-editor':
+#   'alt-g': 'goto-definition:go'
+
+"atom-text-editor[data-grammar='source c']":
+  'ctrl-shift-b': 'gpp-compiler:compile'
+
+"atom-text-editor[data-grammar='source cpp']":
+  'ctrl-shift-b': 'gpp-compiler:compile'
+
+"atom-text-editor[data-grammar='text md']":
+  'ctrl-shift-b': 'markdown-preview-plus:toggle'
+
+"atom-text-editor[data-grammar='source gfm']":
+  'ctrl-shift-b': 'markdown-preview-plus:toggle'
+
+'atom-text-editor.vim-mode-plus':
+  'ctrl-c': 'core:copy'
+  'ctrl-v': 'core:paste'
+  'ctrl-y': 'core:redo'
+
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  '; c c': 'editor:toggle-line-comments'
+  # '; g': 'goto-definition:go'
+  '; j': 'ctrl-dir-scroll:scroll-down'
+  '; k': 'ctrl-dir-scroll:scroll-up'
+  '; d': 'ctrl-dir-scroll:scroll-down-big'
+  '; u': 'ctrl-dir-scroll:scroll-up-big'
+  '; r': 'core:redo'
+  '; g n': 'git-diff:move-to-next-diff'
+  '; g b': 'git-diff:move-to-previous-diff'
+  '; g l': 'git-diff:toggle-diff-list'
+  '; p h': 'window:focus-pane-on-left'
+  '; p j': 'window:focus-pane-on-below'
+  '; p k': 'window:focus-pane-on-above'
+  '; p l': 'window:focus-pane-on-right'
+  '; p n': 'window:focus-next-pane'
+  '; p b': 'window:focus-previous-pane'
+  '; f': 'fuzzy-finder:toggle-file-finder'
+  '; i': 'grammar-selector:show'
+  # '; h': 'file-header:add'
+
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode):not(.mini)[data-grammar~="todo"]':
+  '; t o': 'tasks:add'
+  '; t O': 'tasks:add-above'
+  '; t d': 'tasks:complete'
+  '; t a': 'tasks:archive'
+  '; t c': 'tasks:cancel'
+  '; t t': 'tasks:convert-to-task'
+  '; t s': 'tasks:set-timestamp'
