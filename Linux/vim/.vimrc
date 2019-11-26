@@ -291,3 +291,6 @@ let g:indent_guides_guide_size=1
 "let g:ycm_cache_omnifunc=0
 "" 语法关键字补全
 "let g:ycm_seed_identifiers_with_syntax=1
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
