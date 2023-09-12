@@ -1,0 +1,24 @@
+// Add this to setting.json
+{
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.fontSize": 20,
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.formatOnSave": true,
+    "editor.minimap.maxColumn": 80,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "editor.formatOnSaveMode": "modifications",
+    "C_Cpp.formatting": "clangFormat",
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "giyyapan.pyformat"
+    },
+    "vim.handleKeys": {
+        "<C-c>": false
+    },
+}

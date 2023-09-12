@@ -1,0 +1,29 @@
+// Add this to keybindings.json
+[
+{
+    "key": "ctrl+c",
+    "command": "runCommands",
+    "args": {
+        "commands": [
+            "editor.action.clipboardCopyAction",
+            "cancelSelection",
+        ],
+    },
+    "when": "editorHasSelection && textInputFocus",
+}
+{
+    "key": "ctrl+v",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "vim.active && vim.mode == 'Insert'",
+}
+{
+    "key": "ctrl+x",
+    "command": "editor.action.clipboardCutAction",
+    "when": "vim.active && vim.mode == 'Insert'",
+}
+{
+    "key": "ctrl+a",
+    "command": "editor.action.selectAll",
+    "when": "vim.active && vim.mode == 'Insert'",
+}
+]
